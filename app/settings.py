@@ -93,7 +93,6 @@ if os.environ.get('IS_PROD', 'default').lower() == 'true':
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_BROWSER_XSS_FILTER = True
     X_FRAME_OPTIONS = 'DENY'
-    CSRF_COOKIE_SECURE = True
 
     ALLOWED_HOSTS = [
         'davidzhao.me'
