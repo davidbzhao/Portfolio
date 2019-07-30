@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="prefix"><h1>I am</h1></div>
+    <div class="content">
+        <div class="name">
+            <h1>David Zhao</h1>
+        </div>
+        <div class="event">
+            <h1 class="title">{{ age }} years old</h1>
+            <p class="content">
+                <img src="https://i.imgur.com/Do6Uaza.jpg">
+            </p>
+            At least {{ age|add:1 }} apparently.
+        </div>
+        <div class="event">
+            <h1 class="title">always looking to learn</h1>
+            <p class="content">
+                Right now, I'm learning Chinese, how to cook *edible* food, poker theory, and various programming things.
+            </p>
+        </div>
+        {% for event in events %}
+        <div class="event">
+            <div class="date"><span>{{ event.dates }}</span></div>
+            <h1 class="title">{{ event.title }}</h1>
+            <h3 class="subtitle">{{ event.subtitle }}</h3>
+            <p class="content">
+                {% for line in event.lines %}
+                    {% if line.bold %} <strong> {% endif %}
+                        {{ line.text }}
+                    {% if line.bold %} </strong> {% endif %}
+                    {% if not line.last %} <br> {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+        {% endfor %}
+        <div class="contact">
+            <div>
+                <h1>happy to chat</h1>
+                <div class="contact-list">
+                    <div>Phone</div>
+                    <div>(281) 961-7541</div>
+                    <div>Email</div>
+                    <div><a href="mailto:davidbzhao@outlook.com">davidbzhao@outlook.com</a></div>
+                    <div>LinkedIn</div>
+                    <div><a href="http://linkedin.com/in/davidbzhao">linkedin.com/in/davidbzhao</a></div>
+                    <div>GitHub</div>
+                    <div><a href="http://github.com/davidbzhao">github.com/davidbzhao</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
