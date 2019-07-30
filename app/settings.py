@@ -22,19 +22,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '(!e=_b(n!_jf6uwr(1mhcluq#mk!8krh3vr!y!k)tloiz#k5ps')
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = [
-    'davidzhao.me'
-]
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_BROWSER_XSS_FILTER = True
-X_FRAME_OPTIONS = 'DENY'
-CSRF_COOKIE_SECURE = True
 
 # Application definition
 
@@ -84,6 +71,14 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '(!e=_b(n!_jf6uwr(1mhcluq#mk!8krh3vr!y!k)tloiz#k5ps'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = []
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -91,9 +86,23 @@ DATABASES = {
     }
 }
 if os.environ.get('IS_PROD', 'default').lower() == 'true':
+    DEBUG = False
+
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_BROWSER_XSS_FILTER = True
+    X_FRAME_OPTIONS = 'DENY'
+    CSRF_COOKIE_SECURE = True
+
+    ALLOWED_HOSTS = [
+        'davidzhao.me'
+    ]
+
     DATABASES = {
         "default": dj_database_url.config(default=os.environ.get('DATABASE_URL'))
     }
+    
 
 
 # Password validation
