@@ -5,7 +5,8 @@ class Event(models.Model):
     EVENT_TYPES = (
         ('E', 'Education'),
         ('L', 'Location'),
-        ('W', 'Work')
+        ('W', 'Work'),
+        ('R', 'Recreation'),
     )
     event_type = models.CharField(max_length=1, choices=EVENT_TYPES)
     title = models.CharField(max_length=128)
