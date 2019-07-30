@@ -72,13 +72,29 @@ div.date {
     position: relative;
 }
 
-div.date>span {
+div.date > span {
     position: absolute;
     top: 0;
     transform: translateY(-100%);
     background: #212121;
     color: #fff;
     padding: 0.25rem 0.5rem;
+    text-shadow: 1px 1px #000;
+}
+
+div.date.maryland > span {
+    background: linear-gradient(-45deg, #000000, #000000 33%, #EAAB00 33%, #EAAB00 66%, #981E32 66%, #981E32 100%);
+    font-weight: 700;
+}
+
+div.date.wahoo > span {
+    background: linear-gradient(-45deg, #E57200, #E57200 100px, #232D4B 100px, #232D4B 2000px);
+    font-weight: 700;
+}
+
+div.date.climb > span {
+    background: #e74c3c;
+    font-weight: 700;
 }
 
 div.contact {

@@ -44,7 +44,8 @@ def index(request):
             'dates': get_date_range(event),
             'title': event.title,
             'subtitle': event.subtitle,
-            'lines': get_description_lines(event)
+            'lines': get_description_lines(event),
+            'tag': event.tag
         })
 
 

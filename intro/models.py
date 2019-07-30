@@ -15,3 +15,4 @@ class Event(models.Model):
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
     display = models.BooleanField(default=False)
+    tag = models.CharField(max_length=32, blank=True)
