@@ -9,7 +9,6 @@ class Event(models.Model):
     )
     event_type = models.CharField(max_length=1, choices=EVENT_TYPES)
     title = models.CharField(max_length=128)
-    title_prefix = models.CharField(max_length=16)
     subtitle = models.CharField(max_length=128, blank=True)
     description = models.TextField(blank=True)
     start_date = models.DateField()

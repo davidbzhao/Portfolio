@@ -2,10 +2,24 @@
 
 {% block content %}
 
-
-{% for event in events %}
-<p>{{ event.title }}</p>
-<p>{{ event.subtitle }}</p>
-{% endfor %}
+<section>
+    <div class="prefix">I am</div>
+    <div class="events">
+        {% for event in events %}
+        <div class="event">
+            <div class="date"><span>{{ event.dates }}</span></div>
+            <h1 class="title">{{ event.title }}</h1>
+            <p class="content">
+                {% for line in event.lines %}
+                    {% if line.bold %} <strong> {% endif %}
+                        {{ line.text }}
+                    {% if line.bold %} </strong> {% endif %}
+                    {% if not line.last %} <br> {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 
 {% endblock content %}
