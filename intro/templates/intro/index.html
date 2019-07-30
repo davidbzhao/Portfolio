@@ -8,6 +8,19 @@
         <div class="name">
             <h1>David Zhao</h1>
         </div>
+        <div class="event">
+            <h1 class="title">{{ age }} years old</h1>
+            <p class="content">
+                <img src="https://i.imgur.com/Do6Uaza.jpg">
+            </p>
+            At least {{ age|add:1 }} apparently.
+        </div>
+        <div class="event">
+            <h1 class="title">always looking to learn</h1>
+            <p class="content">
+                Right now, I'm learning Chinese, how to cook *edible* food, poker theory, and various programming things.
+            </p>
+        </div>
         {% for event in events %}
         <div class="event">
             <div class="date"><span>{{ event.dates }}</span></div>
@@ -25,7 +38,7 @@
         {% endfor %}
         <div class="contact">
             <div>
-                <h1>reachable at</h1>
+                <h1>happy to chat</h1>
                 <div class="contact-list">
                     <div>Phone</div>
                     <div>(281) 961-7541</div>
@@ -35,7 +48,6 @@
                     <div><a href="http://linkedin.com/in/davidbzhao">linkedin.com/in/davidbzhao</a></div>
                     <div>GitHub</div>
                     <div><a href="http://github.com/davidbzhao">github.com/davidbzhao</a></div>
-                    
                 </div>
             </div>
         </div>

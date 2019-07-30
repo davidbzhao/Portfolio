@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date, datetime
 
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -6,6 +6,14 @@ from django.http import HttpResponse
 from intro.models import Event
 
 def index(request):
+    def get_age():
+        DOB = date(1999, 8, 13)
+        today = date.today()
+        if (today.month, today.day) < (DOB.month, DOB.day):
+            return today.year - DOB.year - 1
+        else:
+            return today.year - DOB.year
+
     def get_date_range(event):
         start_date = event.start_date.strftime('%b %Y')
         end_date = event.end_date.strftime('%b %Y') if event.end_date else 'Present'
@@ -29,7 +37,7 @@ def index(request):
         return lines
 
 
-    events = Event.objects.all()
+    events = Event.objects.filter(display=True).order_by('event_type')
     processed = []
     for event in events:
         processed.append({
@@ -39,7 +47,9 @@ def index(request):
             'lines': get_description_lines(event)
         })
 
+
     context = {
-        'events': processed
+        'events': processed,
+        'age': get_age()
     }
     return render(request, 'intro/index.html', context)

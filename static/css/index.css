@@ -40,6 +40,11 @@ h3 {
     text-transform: uppercase;
 }
 
+img {
+    width: 50%;
+    border: solid 4px #212121;
+}
+
 div.name {
     height: 100vh;
     position: relative;
