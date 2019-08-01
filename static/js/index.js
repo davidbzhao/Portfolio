@@ -1,3 +1,5 @@
+"use strict";
+
 const NAME_HEIGHT_VH = 100;
 const STICKY_TOP_VH = 40;
 const EVENT_MARGIN_BOTTOM_VH = 50;

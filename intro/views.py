@@ -1,9 +1,19 @@
 from datetime import date, datetime
 
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 
 from intro.models import Event
+
+
+def linkedin(request):
+    return HttpResponseRedirect('https://linkedin.com/in/davidbzhao')
+    
+def github(request):
+    return HttpResponseRedirect('https://github.com/davidbzhao')
+
+def redirect(request):
+    return HttpResponseRedirect('/')
 
 def index(request):
     def get_age():
