@@ -30,7 +30,7 @@ const updateEventCards = () => {
 
 const updateContactCard = () => {
     const contactCard = document.getElementById('contact');
-    const newMarginBottom = window.innerHeight - window.innerHeight * 0.01 * 40 - contactCard.offsetHeight;
+    const newMarginBottom = window.innerHeight - vh * 40 - contactCard.offsetHeight;
     contactCard.style.marginBottom = `${newMarginBottom}px`;
 }
 
