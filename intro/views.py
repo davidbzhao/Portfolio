@@ -11,6 +11,18 @@ def linkedin(request):
     
 def github(request):
     return HttpResponseRedirect('https://github.com/davidbzhao')
+    
+def facebook(request):
+    return HttpResponseRedirect('https://www.facebook.com/davidzhao058')
+    
+def twitter(request):
+    return HttpResponseRedirect('https://twitter.com/davidbzhao')
+
+def quora(request):
+    return HttpResponseRedirect('https://www.quora.com/profile/David-Zhao-28')
+
+def steam(request):
+    return HttpResponseRedirect('https://steamcommunity.com/id/SSSnowy')
 
 def redirect(request):
     return HttpResponseRedirect('/')
@@ -64,3 +76,9 @@ def index(request):
         'age': get_age()
     }
     return render(request, 'intro/index.html', context)
+
+def email(request):
+    return render(request, 'intro/email.html')
+
+def phone(request):
+    return render(request, 'intro/phone.html')

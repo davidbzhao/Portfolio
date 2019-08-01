@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="email">
+    <div>
+        <h1><a href="mailto:davidbzhao@outlook.com">davidbzhao@outlook.com</a></h1>
+        <p>Copied to clipboard</p>
+        <input id="email-link" value="davidbzhao@outlook.com">
+    </div>
+</div>
+
+{% load static %}
+<script type="text/javascript" src="{% static 'js/email.js' %}"></script>
+{% endblock content %}

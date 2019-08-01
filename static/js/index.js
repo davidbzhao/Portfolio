@@ -83,3 +83,14 @@ window.addEventListener('scroll', () => {
         }
     }
 });
+
+const social = document.getElementById('social');
+let socialIndex = 0;
+let socialList = ["github", "linkedin", "quora", "facebook", "twitter", "steam"]
+const updateSocial = () => {
+    socialIndex += 1;
+    socialIndex = (socialIndex + 1) % socialList.length;
+    social.innerText = socialList[socialIndex];
+}
+updateSocial();
+setInterval(updateSocial, 1500);

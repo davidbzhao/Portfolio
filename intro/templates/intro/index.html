@@ -48,10 +48,11 @@
                 <div>GitHub</div>
                 <div><a href="{% url 'github' %}">github.com/davidbzhao</a></div>
                 <div></div>
-                <div>* <a href="{% url 'github' %}">davidzhao.me/github</a> and <a href="{% url 'linkedin' %}">davidzhao.me/linkedin</a> work as well</div>
+                <div>davidzhao.me/<span id="social">social</span></div>
             </div>
         </div>
     </div>
 </section>
 
+<script type="text/javascript" src="{% static 'js/index.js' %}"></script>
 {% endblock content %}
