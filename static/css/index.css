@@ -39,7 +39,7 @@ img {
     border: solid 4px #212121;
 }
 
-div.prefix > h1 {
+div#prefix > h1 {
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 40%;
@@ -121,6 +121,27 @@ span#social {
     padding: 0.125rem 0.25rem;
     border-radius: 0.25rem;
     margin: 0 0.125rem;
+}
+
+div#scroll-bar {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    display: grid;
+}
+
+div#scroll-bar div {
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    line-height: 0.5rem;
+    opacity: 0.12;
+}
+
+div#scroll-bar div.current-section {
+    color: #e74c3c;
+    font-weight: 700;
+    opacity: 0.54;
 }
 
 div#email {
