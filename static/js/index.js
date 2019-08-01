@@ -4,7 +4,7 @@ const EVENT_MARGIN_BOTTOM_VH = 50;
 const HEIGHT_CHANGE_THRESHOLD = 200;
 
 const ATTRACT_SCROLL_DEBOUNCE_TIME = 100;
-const ATTRACT_SCROLL_THRESHOLD = 150;
+const ATTRACT_SCROLL_THRESHOLD = 125;
 
 let prevInnerHeight = window.innerHeight;
 let vh = prevInnerHeight * 0.01;

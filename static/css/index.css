@@ -75,12 +75,12 @@ div.date > span {
 }
 
 div.date.maryland > span {
-    background: linear-gradient(-45deg, #000000, #000000 33%, #EAAB00 33%, #EAAB00 66%, #981E32 66%, #981E32 100%);
+    background: linear-gradient(135deg, #981E32, #981E32 35px, #000000 35px, #000000 45px, #EAAB00 45px, #EAAB00 400px);
     font-weight: 700;
 }
 
 div.date.wahoo > span {
-    background: linear-gradient(-45deg, #E57200, #E57200 100px, #232D4B 100px, #232D4B 2000px);
+    background: linear-gradient(135deg, #232D4B, #232D4B 35px, #E57200 35px, #E57200 400px);
     font-weight: 700;
 }
 
