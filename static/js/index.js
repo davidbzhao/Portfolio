@@ -3,6 +3,9 @@ const STICKY_TOP_VH = 40;
 const EVENT_MARGIN_BOTTOM_VH = 50;
 const HEIGHT_CHANGE_THRESHOLD = 100;
 
+const ATTRACT_SCROLL_DEBOUNCE_TIME = 100;
+const ATTRACT_SCROLL_THRESHOLD = 150;
+
 let prevInnerHeight = window.innerHeight;
 let vh = prevInnerHeight * 0.01;
 
@@ -45,10 +48,36 @@ window.addEventListener('resize', () => {
     updateContactCard();
 });
 
+
 // Fonts affect size of elements, so we have to wait for them to load first
 document.fonts.ready.then(() => {
     updateNameCard();
     updateEventCards();
     updatePrefix();
     updateContactCard();
+});
+
+
+let scrollTimeout;
+window.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    console.log('Timeout is unset')
+    const scrollOffset = STICKY_TOP_VH * vh;
+    const scrollPosition = window.pageYOffset;
+    let titlePosition = 0;
+    const titles = document.getElementsByClassName('title');
+    for (let cnt = 0; cnt < titles.length; cnt++) {
+        titlePosition = titles[cnt].offsetTop - scrollOffset;
+        if (Math.abs(titlePosition - scrollPosition) < ATTRACT_SCROLL_THRESHOLD) {
+            console.log(titlePosition);
+            scrollTimeout = setTimeout(() => {
+                window.scrollTo({
+                    top: titlePosition,
+                    behavior: 'smooth'
+                });
+            }, ATTRACT_SCROLL_DEBOUNCE_TIME);
+            console.log('Timeout is set')
+            break;
+        }
+    }
 });
