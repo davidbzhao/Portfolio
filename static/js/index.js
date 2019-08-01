@@ -34,20 +34,21 @@ const updateContactCard = () => {
     contactCard.style.marginBottom = `${newMarginBottom}px`;
 }
 
-const updateElements = () => {
-    updateNameCard();
-    updateEventCards();
-    updatePrefix();
-    updateContactCard();
-}
-
 window.addEventListener('resize', () => {
     if (Math.abs(window.innerHeight - prevInnerHeight) > HEIGHT_CHANGE_THRESHOLD) {
         prevInnerHeight = window.innerHeight;
         vh = prevInnerHeight * 0.01;
-        updateElements();
+        updateNameCard();
+        updateEventCards();
+        updatePrefix();
     }
+    updateContactCard();
 });
 
 // Fonts affect size of elements, so we have to wait for them to load first
-document.fonts.ready.then(updateElements);
+document.fonts.ready.then(() => {
+    updateNameCard();
+    updateEventCards();
+    updatePrefix();
+    updateContactCard();
+});
