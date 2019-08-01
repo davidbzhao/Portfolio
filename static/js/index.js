@@ -32,12 +32,6 @@ const updateContactCard = () => {
     const contactCard = document.getElementById('contact');
     const newMarginBottom = window.innerHeight - window.innerHeight * 0.01 * 40 - contactCard.offsetHeight;
     contactCard.style.marginBottom = `${newMarginBottom}px`;
-    console.log(window.innerHeight);
-    console.log(STICKY_TOP_VH * window.innerHeight * 0.01);
-    console.log(contactCard.offsetHeight);
-    console.log(contactCard.clientHeight);
-    console.log(contactCard.scrollHeight);
-    console.log(window.innerHeight - window.innerHeight * 0.01 * 40 - contactCard.offsetHeight)
 }
 
 const updateElements = () => {
@@ -48,9 +42,11 @@ const updateElements = () => {
 }
 
 window.addEventListener('resize', () => {
-    prevInnerHeight = window.innerHeight;
-    vh = prevInnerHeight * 0.01;
-    updateElements();
+    if (Math.abs(window.innerHeight - prevInnerHeight) > HEIGHT_CHANGE_THRESHOLD) {
+        prevInnerHeight = window.innerHeight;
+        vh = prevInnerHeight * 0.01;
+        updateElements();
+    }
 });
 
 // Fonts affect size of elements, so we have to wait for them to load first
