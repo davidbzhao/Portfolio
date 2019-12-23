@@ -87,15 +87,18 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+LOCKDOWN_PASSWORDS = [os.environ.get('HOLIDAY_LOCKDOWN_PASSWORD', 'password')]
+
 if os.environ.get('IS_PROD', 'default').lower() == 'true':
     DEBUG = False
 
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    LOCKDOWN_PASSWORDS = [os.environ.get('HOLIDAY_LOCKDOWN_PASSWORD')]
 
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_BROWSER_XSS_FILTER = True
     X_FRAME_OPTIONS = 'DENY'
-    CSRF_COOKIE_SECURE = True
 
     ALLOWED_HOSTS = [
         'davidzhao.me'

@@ -3,7 +3,7 @@ from lockdown.decorators import lockdown
 
 from holiday.models import Stanza, Photo
 
-@lockdown(passwords=("hello",))
+@lockdown()
 def index(request):
     stanzas = Stanza.objects.all()
     photos = Photo.objects.all()
