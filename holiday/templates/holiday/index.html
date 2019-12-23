@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    {% for bucket in buckets %}
+        {% for stanza in bucket.stanzas %}
+            {{ stanza | linebreaks}}
+        {% endfor %}
+        {% for photo in bucket.photos %}
+            <img src="{{ photo }}">
+        {% endfor %}
+    {% endfor %}
+</section>
+
+{% endblock content %}
