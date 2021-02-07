@@ -42,6 +42,7 @@ h3 {
 }
 
 img {
+    max-width: 300px;
     width: 50%;
     border: solid 4px #212121;
 }
