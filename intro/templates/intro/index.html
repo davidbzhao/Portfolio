@@ -2,30 +2,37 @@
 
 {% block content %}
 
-<section>
-  <div class="prefix">
+<div class="full-container">
+  <div id="prefix">
     <h1>I am</h1>
   </div>
-  <div class="content">
-    <div class="name">
+  <div class="content-sections">
+
+    <section class="content-section">
       <h1>David Zhao</h1>
-    </div>
-    <div class="event">
+    </section>
+  
+    <section class="content-section">
       <h1 class="title">{{ age }} years old</h1>
       <p class="content">
-        <img src="https://i.imgur.com/Do6Uaza.jpg" alt="I grew up on Calvin and Hobbes. I think I've read every strip.">
+        <img id="comic" src="https://i.imgur.com/Do6Uaza.jpg" alt="I grew up on Calvin and Hobbes. I think I've read every strip.">
       </p>
       At least {{ age|add:1 }} apparently.
-    </div>
-    <div class="event">
+    </section>
+
+    <section class="content-section">
       <h1 class="title">always looking to learn</h1>
       <p class="content">
-        Right now, I'm learning Chinese and react native (building an app for data-driven puppy potty training),
-        among other things.
+        Whether that be Chinese by watching CDramas like <a href="https://mydramalist.com/53987-sen-yong-high-school-class-two-grade-three" target="_blank">Please Classmate 拜托了班长</a>;
+        or React Native (building an app for data-driven puppy potty training);
+        or chess;
+        or how to deidentify data at scale;
+        or piano & trumpet.
       </p>
-    </div>
+    </section>
+
     {% for event in events %}
-    <div class="event">
+    <section class="content-section">
       <div class="date"><span>{{ event.dates }}</span></div>
       <h1 class="title">{{ event.title }}</h1>
       <h3 class="subtitle">{{ event.subtitle }}</h3>
@@ -37,9 +44,10 @@
         {% if not line.last %} <br> {% endif %}
         {% endfor %}
       </p>
-    </div>
+    </section>
     {% endfor %}
-    <div class="contact">
+
+    <section id="contact" class="content-section">
       <div>
         <h1>happy to chat</h1>
         <div class="contact-list">
@@ -53,8 +61,8 @@
           <div><a href="http://github.com/davidbzhao">github.com/davidbzhao</a></div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
-</section>
+</div>
 
 {% endblock content %}
