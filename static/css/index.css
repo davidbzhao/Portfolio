@@ -11,13 +11,6 @@ body {
     margin: 0;
 }
 
-section {
-    display: grid;
-    grid-template-columns: 2fr 3fr 2fr;
-    grid-column-gap: 1rem;
-    padding: 0 1rem;
-}
-
 p {
     font-weight: 300;
     font-size: 1.25rem;
@@ -47,15 +40,21 @@ img {
     border: solid 4px #212121;
 }
 
-div.name {
-    height: 100vh;
-    position: relative;
-    margin-bottom: 8rem;
+.container {
+    display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
+    grid-column-gap: 1rem;
+    padding: 0 1rem;
 }
 
-div.name > h1 {
-    position: absolute;
-    top: 40%;
+.sections {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+.sections > div {
+    scroll-snap-align: start;
 }
 
 div.prefix > h1 {
@@ -66,7 +65,11 @@ div.prefix > h1 {
 }
 
 div.event {
-    margin-bottom: 50vh;
+    padding-top: 40vh;
+}
+
+#contact {
+    height: 60vh;
 }
 
 div.date {
@@ -80,16 +83,6 @@ div.date>span {
     background: #212121;
     color: #fff;
     padding: 0.25rem 0.5rem;
-}
-
-div.contact {
-    height: 100vh;
-    position: relative;
-}
-
-div.contact > div {
-    position: sticky;
-    top: 40%;
 }
 
 div.contact-list {
@@ -109,7 +102,7 @@ div.contact-list {
         font-size: 1.5rem;
     }
 
-    section {
+    .container {
         grid-template-columns: 2fr 3fr;
     }
 }
