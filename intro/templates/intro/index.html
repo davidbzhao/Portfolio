@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+{% load static %}
 <div class="full-container">
   <div id="prefix">
     <h1>I am</h1>
@@ -15,7 +15,7 @@
     <section class="content-section">
       <h1 class="title">{{ age }} years old</h1>
       <p class="content">
-        <img id="comic" src="https://i.imgur.com/Do6Uaza.jpg" alt="I grew up on Calvin and Hobbes. I think I've read every strip.">
+        <img id="comic" src="{% static 'img/calvin.jpg' %}" alt="I grew up on Calvin and Hobbes. I think I've read every strip.">
       </p>
       At least {{ age|add:1 }} apparently.
     </section>
