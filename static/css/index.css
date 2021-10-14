@@ -17,6 +17,31 @@ p {
   font-size: 1.25rem;
 }
 
+a {
+  color: #11359a;
+  position: relative;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+/* Copied from https://codepen.io/TiagoLopes/pen/yopxeW */
+a::after{
+  content: "";
+  background: rgb(133, 34, 232);
+  mix-blend-mode: exclusion;
+  opacity: 0.2;
+  width: calc(100% + 4px);
+  height: 0;
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+	transition: all .1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+a:hover::after{
+	height: calc(50%)
+}
+
 strong {
   font-size: 1rem;
 }
