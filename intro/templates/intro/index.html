@@ -39,7 +39,7 @@
       <p class="content">
         {% for line in event.lines %}
         {% if line.bold %} <strong> {% endif %}
-          {{ line.text }}
+          {{ line.text | safe }}
           {% if line.bold %} </strong> {% endif %}
         {% if not line.last %} <br> {% endif %}
         {% endfor %}
