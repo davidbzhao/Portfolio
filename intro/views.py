@@ -37,7 +37,7 @@ def index(request):
         return lines
 
 
-    events = Event.objects.filter(display=True).order_by('event_type')
+    events = Event.objects.filter(display=True).order_by('priority')
     processed = []
     for event in events:
         processed.append({
