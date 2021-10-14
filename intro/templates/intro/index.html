@@ -33,7 +33,9 @@
 
     {% for event in events %}
     <section class="content-section">
+      {% if event.dates %}
       <div class="date"><span>{{ event.dates }}</span></div>
+      {% endif %}
       <h1 class="title">{{ event.title }}</h1>
       <h3 class="subtitle">{{ event.subtitle }}</h3>
       <p class="content">

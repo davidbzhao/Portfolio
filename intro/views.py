@@ -15,6 +15,8 @@ def index(request):
             return today.year - DOB.year
 
     def get_date_range(event):
+        if not event.start_date:
+            return None
         start_date = event.start_date.strftime('%b %Y')
         end_date = event.end_date.strftime('%b %Y') if event.end_date else 'Present'
         return f'{start_date} to {end_date}'
