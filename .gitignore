@@ -213,3 +213,4 @@ Temporary Items
 # End of https://www.toptal.com/developers/gitignore/api/sass,django,macos
 
 .vscode/
+.python-version
