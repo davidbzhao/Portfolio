@@ -104,7 +104,7 @@ if os.environ.get('IS_PROD', 'default').lower() == 'true':
     X_FRAME_OPTIONS = 'DENY'
 
     ALLOWED_HOSTS = [
-        'davidzhao.me'
+        'davidz.me'
     ]
 
     DATABASES = {
