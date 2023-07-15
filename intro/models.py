@@ -9,3 +9,9 @@ class Event(models.Model):
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     display = models.BooleanField(default=False)
+
+class GridIcon(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    
+    # 2-D array of RGB tuples
+    colors = models.JSONField()
