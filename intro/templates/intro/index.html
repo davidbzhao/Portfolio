@@ -15,7 +15,13 @@
     <section class="content-section">
       <h1 class="title">{{ age }} years old</h1>
       <p class="content">
-        <img id="comic" src="{% static 'img/calvin.jpg' %}" alt="I grew up on Calvin and Hobbes. I think I've read every strip.">
+        <img
+          id="comic"
+          src="{% static 'img/calvin.jpg' %}"
+          alt="I grew up on Calvin and Hobbes. I think I've read every strip."
+          width="250px"
+          height="332px"
+        >
       </p>
       At least {{ age|add:1 }} apparently.
     </section>
