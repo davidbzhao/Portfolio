@@ -11,7 +11,7 @@ class Event(models.Model):
     display = models.BooleanField(default=False)
 
 class GridIcon(models.Model):
-    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    event = models.OneToOneField(Event, on_delete=models.CASCADE)
     
     # 2-D array of RGB tuples
     colors = models.JSONField()
