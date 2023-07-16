@@ -6,13 +6,26 @@
   <div id="prefix">
     <h1>I am</h1>
   </div>
-  <div class="content-sections">
+  <div id="grid-icon" style="position: absolute; bottom: 0; right: 0;">
+    <svg width="68px" height="68px">
+      <rect x="2" y="2" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="24" y="2" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="46" y="2" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="2" y="24" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="24" y="24" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="46" y="24" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="2" y="46" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="24" y="46" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="46" y="46" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+    </svg>
+  </div>
+  <div id="content-sections">
 
-    <section class="content-section">
+    <section class="content-section" data-grid-icon="[[[0, 155, 72], [183, 18, 52], [255, 213, 0]], [[0, 70, 173], [255, 255, 255], [255, 88, 0]], [[183, 18, 52], [255, 213, 0], [0, 70, 173]]]">
       <h1>David Zhao</h1>
     </section>
   
-    <section class="content-section">
+    <section class="content-section" data-grid-icon="[[[242, 113, 35], [255, 255, 255], [255, 200, 23]], [[3, 3, 30], [242, 113, 35], [255, 213, 207]], [[242, 113, 35], [3, 3, 30], [244, 6, 42]]]">
       <h1 class="title">{{ age }} years old</h1>
       <p class="content">
         <img
@@ -27,7 +40,7 @@
     </section>
 
     {% for event in events %}
-    <section class="content-section">
+    <section class="content-section" data-grid-icon="{{ event.grid_icon }}">
       {% if event.dates %}
       <div class="date"><span>{{ event.dates }}</span></div>
       {% endif %}
@@ -44,7 +57,7 @@
     </section>
     {% endfor %}
 
-    <section id="contact" class="content-section">
+    <section id="contact" class="content-section" data-grid-icon="[[[1, 167, 101], [255, 255, 255], [255, 255, 255]], [[1, 167, 101], [255, 255, 255], [1, 167, 101]], [[1, 167, 101], [255, 255, 255], [255, 255, 255]]]">
       <div>
         <h1>happy to chat</h1>
         <div class="contact-list">
