@@ -85,3 +85,33 @@ function setAge() {
 }
 
 setAge();
+
+/**
+ * When you hover over the doggos image, add random bark sounds to the screen.
+ */
+const doggosImage = document.getElementById('doggos');
+const barkTexts = ["bark", "bork", "woof", "ruff", "arf", "yip", "voff", "guk"];
+doggosImage.addEventListener('mouseenter', () => {
+    const interval = setInterval(() => {
+        const bark = document.createElement('span');
+        bark.className = 'bark';
+        // Randomize the bark sound
+        const barkSound = barkTexts[Math.floor(Math.random() * barkTexts.length)];
+        bark.innerText = `${barkSound} ${barkSound}`;
+        // Randomize the position
+        bark.style.left = `${Math.random() * 80 + 10}%`;
+        bark.style.top = `${Math.random() * 80 + 10}%`;
+        // Randomize the rotation, between -20 and 20 degrees
+        bark.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
+
+        // Start visible then fade out
+        bark.classList.add('visible');
+        document.body.appendChild(bark);
+        setTimeout(() => bark.classList.add('hidden'), 500);
+        setTimeout(() => bark.remove(), 2000);
+    }, 700);
+
+    doggosImage.addEventListener('mouseleave', () => {
+        clearInterval(interval);
+    }, { once: true });
+});
