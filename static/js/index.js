@@ -67,3 +67,21 @@ function handleScroll() {
 
 sections.onscroll = handleScroll;
 handleScroll();
+
+/**
+ * Sets the age in the HTML element with ID 'age' and 'age-plus-one'.
+ */
+function setAge() {
+    // Get age assuming August 1, 1999 birthday.
+    const approxBirthDate = new Date(1999, 7, 1);
+    const today = new Date();
+    let age = today.getFullYear() - approxBirthDate.getFullYear();
+    const monthDiff = today.getMonth() - approxBirthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < approxBirthDate.getDate())) {
+        age--;
+    }
+    document.getElementById('age').innerText = age;
+    document.getElementById('age-plus-one').innerText = age + 1;
+}
+
+setAge();
