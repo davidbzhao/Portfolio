@@ -1,11 +1,10 @@
-const sections = document.getElementById('content-sections');
-
+const sections = document.getElementById("content-sections");
 
 function getCurrentPosition() {
     const currentY = sections.scrollTop;
-    const contentSections = document.querySelectorAll('.content-section');
+    const contentSections = document.querySelectorAll(".content-section");
     const contentSectionHeight = contentSections[0].offsetHeight;
-    const sectionIndex = Math.floor(currentY / contentSectionHeight)
+    const sectionIndex = Math.floor(currentY / contentSectionHeight);
     const top = sectionIndex * contentSectionHeight;
     const bottom = top + contentSectionHeight;
     const percent = (currentY - top) / (bottom - top);
@@ -18,8 +17,10 @@ function getSectionColorGrids() {
         [[0, 0, 25], [255, 255, 255], [0, 0, 25]],
         [[0, 0, 50], [0, 0, 50], [0, 0, 50]]
     ]`;
-    const contentSections = document.querySelectorAll('.content-section');
-    const grids = Array.from(contentSections).map(s => JSON.parse(s.dataset.gridIcon ?? defaultGrid));
+    const contentSections = document.querySelectorAll(".content-section");
+    const grids = Array.from(contentSections).map((s) =>
+        JSON.parse(s.dataset.gridIcon ?? defaultGrid)
+    );
     return grids;
 }
 
@@ -41,18 +42,17 @@ function interpolateColorGrid(colorGrid1, colorGrid2, percent) {
 }
 
 function applyColorGrid(colorGrid) {
-    const gridIcon = document.getElementById('grid-icon');
+    const gridIcon = document.getElementById("grid-icon");
     const gridIconSvg = gridIcon.children[0];
     const rects = gridIconSvg.children;
     Array.from(rects).forEach((rect, i) => {
         const [r, c] = [Math.floor(i / 3), i % 3];
-        console.log(r, c, colorGrid[r][c]);
         rect.style.fill = tupleToRGB(colorGrid[r][c]);
     });
 }
 
 function tupleToRGB(threeTuple) {
-    return `rgb(${threeTuple.join(', ')})`;
+    return `rgb(${threeTuple.join(", ")})`;
 }
 
 function handleScroll() {
@@ -77,11 +77,14 @@ function setAge() {
     const today = new Date();
     let age = today.getFullYear() - approxBirthDate.getFullYear();
     const monthDiff = today.getMonth() - approxBirthDate.getMonth();
-    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < approxBirthDate.getDate())) {
+    if (
+        monthDiff < 0 ||
+        (monthDiff === 0 && today.getDate() < approxBirthDate.getDate())
+    ) {
         age--;
     }
-    document.getElementById('age').innerText = age;
-    document.getElementById('age-plus-one').innerText = age + 1;
+    document.getElementById("age").innerText = age;
+    document.getElementById("age-plus-one").innerText = age + 1;
 }
 
 setAge();
@@ -89,12 +92,12 @@ setAge();
 /**
  * When you hover over the doggos image, add random bark sounds to the screen.
  */
-const doggosImage = document.getElementById('doggos');
+const doggosImage = document.getElementById("doggos");
 const barkTexts = ["bark", "bork", "woof", "ruff", "arf", "yip", "voff", "guk"];
-doggosImage.addEventListener('mouseenter', () => {
+doggosImage.addEventListener("mouseenter", () => {
     const interval = setInterval(() => {
-        const bark = document.createElement('span');
-        bark.className = 'bark';
+        const bark = document.createElement("span");
+        bark.className = "bark";
         // Randomize the bark sound
         const barkSound = barkTexts[Math.floor(Math.random() * barkTexts.length)];
         bark.innerText = `${barkSound} ${barkSound}`;
@@ -105,13 +108,17 @@ doggosImage.addEventListener('mouseenter', () => {
         bark.style.transform = `rotate(${Math.random() * 40 - 20}deg)`;
 
         // Start visible then fade out
-        bark.classList.add('visible');
+        bark.classList.add("visible");
         document.body.appendChild(bark);
-        setTimeout(() => bark.classList.add('hidden'), 500);
+        setTimeout(() => bark.classList.add("hidden"), 500);
         setTimeout(() => bark.remove(), 2000);
     }, 700);
 
-    doggosImage.addEventListener('mouseleave', () => {
-        clearInterval(interval);
-    }, { once: true });
+    doggosImage.addEventListener(
+        "mouseleave",
+        () => {
+            clearInterval(interval);
+        },
+        { once: true }
+    );
 });
