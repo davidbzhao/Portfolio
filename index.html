@@ -16,13 +16,29 @@
   <div id="prefix">
     <h1>I am</h1>
   </div>
-  <div class="content-sections">
 
-    <section class="content-section">
+  <!-- Rubik's cube -->
+  <div id="grid-icon" style="position: absolute; top: 8px; left: 8px;">
+    <svg width="68px" height="68px">
+      <rect x="2" y="2" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="24" y="2" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="46" y="2" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="2" y="24" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="24" y="24" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="46" y="24" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="2" y="46" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="24" y="46" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+      <rect x="46" y="46" width="16" height="16" style="stroke-width: 2; stroke: rgb(0,0,0)" />
+    </svg>
+  </div>
+
+  <!-- Content sections -->
+  <div id="content-sections">
+    <section class="content-section" data-grid-icon="[[[0, 155, 72], [183, 18, 52], [255, 213, 0]], [[0, 70, 173], [255, 255, 255], [255, 88, 0]], [[183, 18, 52], [255, 213, 0], [0, 70, 173]]]">
       <h1>David Zhao</h1>
     </section>
   
-    <section class="content-section">
+    <section class="content-section" data-grid-icon="[[[242, 113, 35], [255, 255, 255], [255, 200, 23]], [[3, 3, 30], [242, 113, 35], [255, 213, 207]], [[242, 113, 35], [3, 3, 30], [244, 6, 42]]]">
       <h1 class="title"><span id="age">some</span> years old</h1>
       <p class="content">
         <img id="comic" src="static/img/calvin.jpg" alt="I grew up on Calvin and Hobbes. I think I've read every strip.">
@@ -30,8 +46,7 @@
       At least <span id="age-plus-one">some</span> apparently.
     </section>
 
-
-    <section class="content-section">
+    <section class="content-section" data-grid-icon="[[[0, 0, 0], [0, 0, 0], [0, 0, 0]], [[0, 0, 0], [255, 255, 255], [0, 0, 0]], [[255, 255, 255], [0, 0, 0], [255, 255, 255]]]">
       <div class="date"><span>Oct 2021 to Present</span></div>
       <h1 class="title">a Software Engineer</h1>
       <h3 class="subtitle">Peregrine Technologies</h3>
@@ -40,20 +55,20 @@
       </p>
     </section>
     
-    <section class="content-section">
+    <section class="content-section" data-grid-icon="[[[229, 114, 0], [35, 45, 75], [229, 114, 0]], [[229, 114, 0], [35, 45, 75], [229, 114, 0]], [[35, 45, 75], [229, 114, 0], [35, 45, 75]]]">
       <div class="date"><span>Aug 2016 to May 2019</span></div>
       <h1 class="title">a Wahoo</h1>
       <h3 class="subtitle">B.S. Computer Science and Statistics</h3>
       <p class="content">Go UVA! When I wasn't cramming for classes, I was running around playing trumpet in <a href="https://www.cavalierso.com/">various student groups</a> and putting on our school's hackathon, <a href="https://hoohacks.io/">HooHacks</a>.</p>
     </section>
     
-    <section class="content-section">
+    <section class="content-section" data-grid-icon="[[[96, 103, 109], [40, 93, 171], [96, 103, 109]], [[240, 63, 65], [96, 103, 109], [96, 103, 109]], [[96, 103, 109], [96, 103, 109], [213, 187, 48]]]">
       <div class="date"><span>Jan 2019 to Now</span></div>
       <h1 class="title">a Boulderer</h1>
       <p class="content">My friend, Andrew, asked if I wanted to join an intro to climbing class my last semester of college. I've been climbing non-stop ever since (minus COVID, of course). If you ever want to climb, hit me up :)</p>
     </section>
 
-    <section class="content-section">
+    <section class="content-section" data-grid-icon="[[[0, 0, 0], [255, 255, 255], [0, 0, 0]], [[211, 149, 93], [0, 0, 0], [211, 149, 93]], [[255, 255, 255], [202, 132, 134], [255, 255, 255]]]">
       <div class="date"><span>Feb 2020 to Now</span></div>
       <h1 class="title">a Dog Dad</h1>
       <h3 class="subtitle">Millie, Sunny, & Hitch</h3>
@@ -61,7 +76,7 @@
       <img id="doggos" src="static/img/doggos.jpg" class="content">
     </section>
 
-    <section id="contact" class="content-section">
+    <section id="contact" class="content-section" data-grid-icon="[[[1, 167, 101], [255, 255, 255], [255, 255, 255]], [[1, 167, 101], [255, 255, 255], [1, 167, 101]], [[1, 167, 101], [255, 255, 255], [255, 255, 255]]]">
       <div>
         <h1>happy to chat</h1>
         <div class="contact-list">
