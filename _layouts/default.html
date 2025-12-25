@@ -57,6 +57,8 @@
   </head>
 
   <body>
+    {% if page.show_navigation %} {% include navigation.html %} {% endif %}
+    <!-- Page content -->
     {{ content }}
     <script src="https://cdn.cookiehub.eu/c2/0983b3d8.js"></script>
     <script type="text/javascript">
