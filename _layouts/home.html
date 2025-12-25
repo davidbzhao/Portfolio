@@ -1,0 +1,27 @@
+---
+show_navigation: true
+---
+
+<!DOCTYPE html>
+<html lang="en" style="overflow-y: scroll">
+  <head>
+    {% include meta.html %}
+  </head>
+
+  <body>
+    {% if page.show_navigation %} {% include navigation.html %} {% endif %}
+    <!-- Page content -->
+    <div class="blog-container">
+      <div class="blog-content">
+        {% for post in site.posts %}
+        <div class="post">
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          {{ post.excerpt }}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- Cookie consent -->
+    {% include cookie_footer.html %}
+  </body>
+</html>
