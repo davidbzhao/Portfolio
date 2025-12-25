@@ -1,5 +1,6 @@
 ---
 layout: post
+show_navigation: true
 title:  "Welcome to Jekyll!"
 date:   2025-12-25 13:36:59 -0500
 categories: jekyll update
