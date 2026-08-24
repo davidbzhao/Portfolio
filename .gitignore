@@ -214,10 +214,3 @@ Temporary Items
 
 .vscode/
 .python-version
-
-# Jekyll
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
